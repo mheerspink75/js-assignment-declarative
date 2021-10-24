@@ -31,7 +31,6 @@ const calculateTotalImperative = (items, tax) => {
 /**********/
 
 // prices: (items: [{price: number}]) -> [number]
-//const prices = undefined; // TODO - Implementation
 const prices = (items) => {
   let arr = [];
   for (let i = 0; i < items.length; i++) {
@@ -42,7 +41,6 @@ const prices = (items) => {
 };
 
 // sum: (numbers: [number]) -> number
-//const sum = undefined; // TODO - Implementation
 const sum = (numbers) => {
   let number = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -52,7 +50,6 @@ const sum = (numbers) => {
 };
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-//const selectTaxable = undefined; // TODO - Implementation
 const selectTaxable = (items) => {
   let arr = [];
   for (let i = 0; i < items.length; i++) {
@@ -64,7 +61,6 @@ const selectTaxable = (items) => {
 };
 
 // applyTax: (prices: [number], tax: number) -> [number]
-//const applyTax = undefined; // TODO - Implementation
 const applyTax = (prices, tax) => {
   let arr = [];
   for (let i = 0; i < prices.length; i++) {
