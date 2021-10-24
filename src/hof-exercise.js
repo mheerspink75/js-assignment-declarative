@@ -54,17 +54,25 @@ const sum = (numbers) => {
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
 //const selectTaxable = undefined; // TODO - Implementation
 const selectTaxable = (items) => {
-  let arr = []
-  for (let i=0; i<items.length; i++) {
+  let arr = [];
+  for (let i = 0; i < items.length; i++) {
     if (items[i].taxable === true) {
-      arr.push(items[i])
+      arr.push(items[i]);
     }
   }
   return arr;
-}
+};
 
 // applyTax: (prices: [number], tax: number) -> [number]
-const applyTax = undefined; // TODO - Implementation
+//const applyTax = undefined; // TODO - Implementation
+const applyTax = (prices, tax) => {
+  let arr = [];
+  for (let i = 0; i < prices.length; i++) {
+    let number = prices[i] * tax;
+    arr.push(number);
+  }
+  return arr;
+};
 
 // baseSum: TODO - Type Signature
 const baseSum = (items) => sum(prices(items));
