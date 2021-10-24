@@ -2,6 +2,8 @@
 // EXAMPLES
 /**********/
 
+import { result } from "lodash";
+
 // numbers: [number]
 const numbers = [1, 2, 3];
 
@@ -33,17 +35,33 @@ const calculateTotalImperative = (items, tax) => {
 const prices = (items) => {
   let arr = [];
   for (let i = 0; i < items.length; i++) {
-    let numbers = items[i].price;
-    arr.push(numbers);
+    let number = items[i].price;
+    arr.push(number);
   }
   return arr;
 };
 
 // sum: (numbers: [number]) -> number
-const sum = undefined; // TODO - Implementation
+//const sum = undefined; // TODO - Implementation
+const sum = (numbers) => {
+  let number = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    number += numbers[i];
+  }
+  return number;
+};
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-const selectTaxable = undefined; // TODO - Implementation
+//const selectTaxable = undefined; // TODO - Implementation
+const selectTaxable = (items) => {
+  let arr = []
+  for (let i=0; i<items.length; i++) {
+    if (items[i].taxable === true) {
+      arr.push(items[i])
+    }
+  }
+  return arr;
+}
 
 // applyTax: (prices: [number], tax: number) -> [number]
 const applyTax = undefined; // TODO - Implementation
