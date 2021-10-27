@@ -31,44 +31,64 @@ const calculateTotalImperative = (items, tax) => {
 /**********/
 
 // prices: (items: [{price: number}]) -> [number]
-const prices = (items) => {
-  let arr = [];
-  for (let i = 0; i < items.length; i++) {
-    let number = items[i].price;
-    arr.push(number);
-  }
-  return arr;
-};
+// const prices = (items) => {
+//   let arr = [];
+//   for (let i = 0; i < items.length; i++) {
+//     let number = items[i].price;
+//     arr.push(number);
+//   }
+//   return arr;
+// };
+
+
+// prices: (items: [{price: number}]) -> [number]
+const prices = (items) => items.map((e) => e.price);
+
 
 // sum: (numbers: [number]) -> number
-const sum = (numbers) => {
-  let number = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    number += numbers[i];
-  }
-  return number;
-};
+// const sum = (numbers) => {
+//   let number = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     number += numbers[i];
+//   }
+//   return number;
+// };
+
+
+// sum: (numbers: [number]) -> number
+const sum = (numbers) => numbers.reduce((total, price) => total + price, 0);
+
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-const selectTaxable = (items) => {
-  let arr = [];
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].taxable === true) {
-      arr.push(items[i]);
-    }
-  }
-  return arr;
-};
+// const selectTaxable = (items) => {
+//   let arr = [];
+//   for (let i = 0; i < items.length; i++) {
+//     if (items[i].taxable === true) {
+//       arr.push(items[i]);
+//     }
+//   }
+//   return arr;
+// };
+
+
+// selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
+const selectTaxable = (items) => items.filter((e) => e.taxable);
+
 
 // applyTax: (prices: [number], tax: number) -> [number]
-const applyTax = (prices, tax) => {
-  let arr = [];
-  for (let i = 0; i < prices.length; i++) {
-    let number = prices[i] * tax;
-    arr.push(number);
-  }
-  return arr;
-};
+// const applyTax = (prices, tax) => {
+//   let arr = [];
+//   for (let i = 0; i < prices.length; i++) {
+//     let number = prices[i] * tax;
+//     arr.push(number);
+//   }
+//   return arr;
+// };
+
+
+// applyTax: (prices: [number], tax: number) -> [number]
+const applyTax = (prices, tax) => prices.map((e) => e * tax);
+
 
 // baseSum: TODO - Type Signature
 const baseSum = (items) => sum(prices(items));
