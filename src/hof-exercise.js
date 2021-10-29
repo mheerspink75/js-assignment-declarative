@@ -42,13 +42,13 @@ const selectTaxable = (items) => items.filter((e) => e.taxable);
 // applyTax: (prices: [number], tax: number) -> [number]
 const applyTax = (prices, tax) => prices.map((e) => e * tax);
 
-// baseSum: (items: [number]) -> number
+// baseSum: (items: [{price: number}]) -> number
 const baseSum = (items) => sum(prices(items));
 
-// taxSum: (items: [number, {taxable: boolean}], tax: number ) -> number
+// taxSum: (items: [{price: number, taxable: boolean}], tax: number ) -> number
 const taxSum = (items, tax) => sum(applyTax(prices(selectTaxable(items)), tax));
 
-// calculateTotalDeclarative: (items: [number], tax: number) -> number
+// calculateTotalDeclarative: (items: [{price: number, taxable: boolean}], tax: number) -> number
 const calculateTotalDeclarative = (items, tax) =>
   baseSum(items) + taxSum(items, Math.abs(tax));
 
